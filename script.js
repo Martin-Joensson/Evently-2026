@@ -1,0 +1,46 @@
+const btnNavOpen = document.querySelector("#btnNavOpen");
+const btnNavClose = document.querySelector("#btnNavClose");
+const media = window.matchMedia("(width < 40rem)");
+const topNavMenu = document.querySelector(".topnav__menu");
+const main = document.querySelector("main");
+
+function setupTopNav(e) {
+  if (e.matches) {
+    // is mobile
+    console.log("Is Mobile");
+    topNavMenu.setAttribute("inert", "");
+    topNavMenu.style.transition = "none";
+  } else {
+    // is tablet or larger
+    console.log("Is large");
+    topNavMenu.removeAttribute("inert");
+  }
+}
+
+function openMobileMenu() {
+  btnNavOpen.setAttribute("aria-expanded", "true");
+  topNavMenu.removeAttribute("inert");
+  topNavMenu.removeAttribute("style");
+  main.setAttribute("inert", "");
+  btnNavClose.focus();
+}
+
+function closeMobileMenu() {
+  btnNavOpen.setAttribute("aria-expanded", "false");
+  topNavMenu.setAttribute("inert", "");
+  main.removeAttribute("inert");
+  btnNavOpen.focus();
+
+  setTimeout(() => {
+    topNavMenu.style.transition = "none";
+  }, 500);
+}
+
+setupTopNav(media);
+
+btnNavOpen.addEventListener("click", openMobileMenu);
+btnNavClose.addEventListener("click", closeMobileMenu);
+
+media.addEventListener("change", function (e) {
+  setupTopNav(e);
+});

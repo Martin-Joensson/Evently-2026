@@ -1,209 +1,355 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evently - Hitta lokala evenemang du kommer älska</title>
     <!-- Google Fonts Preconnect and Links for Variable Fonts: Inter and Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/script.js" async></script>
+  </head>
 
-<body>
-    <!-- SVGs -->
-
-    <!-- logo icon -->
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true">
-        <path
-            d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z" />
-    </svg>
-
-    <!-- spyglass icon -->
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-
-    <!-- hamburger icon -->
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-    </svg>
-
-    <!-- heart icon -->
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path
-            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-        </path>
-    </svg>
-
-    <!-- ticket icon -->
-    <svg class="m-1 text-emerald-800" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path
-            d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z">
-        </path>
-        <line x1="9" y1="5" x2="9" y2="19"></line>
-    </svg>
-
-    <!-- people icon -->
-    <svg class="m-1 text-emerald-800" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-    </svg>
-
-    <!-- location icon -->
-    <svg class="m-1 text-emerald-800" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-        <circle cx="12" cy="10" r="3"></circle>
-    </svg>
-
-    <!-- instagram icon -->
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-    </svg>
-
-    <!-- facebook icon -->
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-    </svg>
-
-    <!-- x icon -->
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path
-            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-        </path>
-    </svg>
-
+  <body>
     <!-- Header -->
-    <header class="header">
-        Evently
-
-        Hem
-        Evenemang
-        Kategorier
-        Om oss
-        Kontakt
-
-        Skapa konto
+    <header class="header topnav wrapper">
+      <h1>
+        <!-- logo icon -->
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z"
+          />
+        </svg>
+        <a href="#"> Evently </a>
+      </h1>
+      <span id="nav-label" hidden>Navigation</span>
+      <button
+        id="btnNavOpen"
+        class="topnav__open"
+        aria-expanded="false"
+        aria-labelledby="nav-label"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+        <button id="btnNavClose" class="topnav__close" aria-label="Close">
+          <svg
+            width="20"
+            height="20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path
+              d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
+            />
+          </svg>
+          <!-- <img src="" alt="" width="28" height="28" /> -->
+        </button>
+        <ul class="topnav__links">
+          <li class="topnav__item"><a href="#" class="topnav__link">Hem</a></li>
+          <li class="topnav__item">
+            <a href="#" class="topnav__link">Evenemang</a>
+          </li>
+          <li class="topnav__item">
+            <a href="#" class="topnav__link">Kategorier</a>
+          </li>
+          <li class="topnav__item">
+            <a href="#" class="topnav__link">Om oss</a>
+          </li>
+          <li class="topnav__item">
+            <a href="#" class="topnav__link">Kontakt</a>
+          </li>
+          <li class="topnav__item">
+            <a href="#" class="topnav__link">Skapa Konto</a>
+          </li>
+        </ul>
+      </div>
     </header>
-
 
     <!-- Main content -->
     <main>
-        Upptäck. Upplev. Minns.
+      <section class="hero">
+        <div class="tags">Upptäck. Upplev. Minns.</div>
+        <p class="hero__heading">
+          <!-- h1? hero text-->
+          Hitta lokala evenemang du kommer älska
+        </p>
+        <p class="hero__paragraph">
+          <!-- Hero blurb-->
+          Från konserter och marknader till workshops och familjeaktiviteter.
+          Upptäck vad som händer nära dig.
+        </p>
 
-        Hitta lokala evenemang du kommer älska
+        <div class="hero__CTA">
+          <button>Utforska evenemang</button>
+          <button>Se helgens tips</button>
+        </div>
+        <!--Bild grid-->
+      </section>
 
-        Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.
+      <section class="filter-bar">
+        <p>Hitta rätt evenmang</p>
+        <div class="filter-bar__filters">
+          <form>
+            <label for="search">Sökord</label>
+            <input type="text" class="search" id="search" />
+            <label for="category">Kategori</label>
+            <select name="" id="category">
+              <option value="">Alla kategorier</option>
+              <option value="">Konsert</option>
+              <option value="">Marknad</option>
+              <option value="">Workshop</option>
+              <option value="">Familja</option>
+              <option value="">Sport</option>
+              <option value="">Hälsa</option>
+            </select>
+            <label for="date">Datum</label>
+            <input type="date" id="date" />
+            <button>Sök evenemang</button>
+          </form>
+        </div>
+      </section>
 
-        Utforska evenemang
-        Se helgens tips
+      <section class="grid-section">
+        <div class="grid-section__top">
+          <p>Populära evenemang</p>
+          <a href="#">Se alla evenemang -></a>
+        </div>
+        <div class="grid-section__grid">
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Konsert</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->24 Maj</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">Indie Night med Nova Sun</p>
+              <p class="grid-section__card-location">Pustervik, Göreborg</p>
+            </div>
+          </article>
 
-        Hitta rätt evenemang
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Marknad</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->25 Maj</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">Vårmarknad i Slottsskogen</p>
+              <p class="grid-section__card-location">Slottsskogen, Göteborg</p>
+            </div>
+          </article>
 
-        Sökord
-        Kategori
-        Alla kategorier
-        Konsert
-        Marknad
-        Workshop
-        Familj
-        Sport / Hälsa
-        Datum
-        Sök evenemang
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Workshop</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->27 Maj</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">Keramikkurs för nybörjare</p>
+              <p class="grid-section__card-location">Studio Lera, Göteborg</p>
+            </div>
+          </article>
 
-        Populära evenemang
-        Se alla evenemang
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Familj</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->30 Maj</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">
+                Barnteater: Den lilla sjöjungfrun
+              </p>
+              <p class="grid-section__card-location">Folkteatern, Göteborg</p>
+            </div>
+          </article>
 
-        Indie Night med Nova Sun
-        Konsert
-        24 maj
-        Pustervik, Göteborg
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Sport</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->1 juni</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">Morgonlöpning & frukost</p>
+              <p class="grid-section__card-location">Slottsskogen, Göteborg</p>
+            </div>
+          </article>
+          <article class="grid-section__card">
+            <div class="grid-section__card-top">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                class="grid-section__card-image"
+              />
+              <img src="" alt="" class="grid-section__heart" />
+            </div>
+            <div class="grid-section__info-row">
+              <span class="grid-section__tag tag">Konsert</span
+              ><span class="grid-section__date"
+                ><!-- LÄGG TILL DATEGREJEN-->3 juni</span
+              >
+            </div>
+            <div class="grid-section__text">
+              <p class="grid-section__card-title">Jazzkväll på Vasateatern</p>
+              <p class="grid-section__card-location">Vasateatern, Göteborg</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        Vårmarknad i Slottsskogen
-        Marknad
-        25 maj
-        Slottsskogen, Göteborg
-
-        Keramikkurs för nybörjare
-        Workshop
-        27 maj
-        Studio Lera, Göteborg
-
-        Barnteater: Den lilla sjöjungfrun
-        Familj
-        31 maj
-        Folkteatern, Göteborg
-
-        Morgonlöpning & frukost
-        Sport
-        1 juni
-        Slottsskogen, Göteborg
-
-
-        Jazzkväll på Vasateatern
-        Konsert
-        3 juni
-        Vasateatern, Göteborg
-
-
-        Gratis & prisvärt
-        Hitta massor av evenemang som är gratis eller snälla mot plånboken.
-
-
-        För alla åldrar
-        Aktiviteter för både stora och små - hitta något som passar hela familjen.
-
-        Nära dig
-        Upptäck evenemang i ditt område och stöd lokala arrangörer.
+      <section class="sales-bar">
+        <div>
+          <img src="" alt="" class="sales-bar__image" />
+          <p class="sales-bar__title">Gratis & Prisvärt</p>
+          <p class="sales-bar__text">
+            Hitta massor av evenemang som är gratis eller snälla mot plånboken.
+          </p>
+        </div>
+        <div>
+          <img src="" alt="" class="sales-bar__image" />
+          <p class="sales-bar__title">För alla åldrar</p>
+          <p class="sales-bar__text">
+            Aktiviteter för både stora och små - hitta något som passar hela
+            familjen.
+          </p>
+        </div>
+        <div>
+          <img src="" alt="" class="sales-bar__image" />
+          <p class="sales-bar__title">Nära dig</p>
+          <p class="sales-bar__text">
+            Upptäck evenemang i ditt område och stöd lokala arrangörer.
+          </p>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        Evently
-        Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera och dela upplevelser som berikar din
-        vardag.
+      <div>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z"
+          />
+        </svg>
+        <span>Evently</span>
+        <p>
+          Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera
+          och dela upplevelser som berikar din vardag.
+        </p>
+        <div>
+          <img src="" alt="" /><img src="" alt="" /><img src="" alt="" />
+        </div>
+      </div>
 
-
-        Utforska
-        Alla evenemang
-        Kategorier
-        Helgens tips
-        Populära
-
-        Om Evently
-        Om oss
-        För arrangörer
-        Vanliga frågor
-        Nyheter
-
-        Kontakt
-        info@evently.se
-        031-123 45 67
-        Stora Badhusgatan 18
-        411 21 Göteborg
+      <div>
+        <p>Utforska</p>
+        <ul>
+          <li>Alla evenemang</li>
+          <li>Kategorier</li>
+          <li>Helgens tips</li>
+          <li>Populära</li>
+        </ul>
+      </div>
+      <div>
+        <p>Om Evently</p>
+        <ul>
+          <li>Om oss</li>
+          <li>För arrangörer</li>
+          <li>Vanliga frågor</li>
+          <li>Nyheter</li>
+        </ul>
+      </div>
+      <div>
+        <p>Kontakt</p>
+        <ul>
+          <li>infor@evently.se</li>
+          <li>031-123 45 67</li>
+          <li>Stora Badhusgata 16 411 21 Göteborg</li>
+          <li></li>
+        </ul>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
