@@ -17,104 +17,142 @@
 
   <body>
     <!-- Header -->
-    <header class="header topnav wrapper">
-      <h1>
-        <!-- logo icon -->
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
+    <header class="content-grid full-width">
+      <div class="topnav">
+        <span class="topnav__logo">
+          <!-- logo icon -->
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z"
+            />
+          </svg>
+          <a href="#"> Evently </a>
+        </span>
+        <span id="nav-label" hidden>Navigation</span>
+        <button
+          id="btnNavOpen"
+          class="topnav__open nav-button"
+          aria-expanded="false"
+          aria-labelledby="nav-label"
         >
-          <path
-            d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z"
-          />
-        </svg>
-        <a href="#"> Evently </a>
-      </h1>
-      <span id="nav-label" hidden>Navigation</span>
-      <button
-        id="btnNavOpen"
-        class="topnav__open"
-        aria-expanded="false"
-        aria-labelledby="nav-label"
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="4" y1="12" x2="20" y2="12"></line>
-          <line x1="4" y1="6" x2="20" y2="6"></line>
-          <line x1="4" y1="18" x2="20" y2="18"></line>
-        </svg>
-      </button>
-      <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
-        <button id="btnNavClose" class="topnav__close" aria-label="Close">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+          <button id="btnNavClose" class="topnav__close" aria-label="Close">
+            <svg
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+              <path
+                d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
+              />
+            </svg>
+            <!-- <img src="" alt="" width="28" height="28" /> -->
+          </button>
+          <ul class="topnav__links">
+            <li class="topnav__item">
+              <a href="#" class="topnav__link">Hem</a>
+            </li>
+            <li class="topnav__item">
+              <a href="#" class="topnav__link">Evenemang</a>
+            </li>
+            <li class="topnav__item">
+              <a href="#" class="topnav__link">Kategorier</a>
+            </li>
+            <li class="topnav__item">
+              <a href="#" class="topnav__link">Om oss</a>
+            </li>
+            <li class="topnav__item">
+              <a href="#" class="topnav__link">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <!-- spyglass icon -->
           <svg
             width="20"
             height="20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 384 512"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
           >
-            <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-            <path
-              d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
-            />
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <!-- <img src="" alt="" width="28" height="28" /> -->
-        </button>
-        <ul class="topnav__links">
-          <li class="topnav__item"><a href="#" class="topnav__link">Hem</a></li>
-          <li class="topnav__item">
-            <a href="#" class="topnav__link">Evenemang</a>
-          </li>
-          <li class="topnav__item">
-            <a href="#" class="topnav__link">Kategorier</a>
-          </li>
-          <li class="topnav__item">
-            <a href="#" class="topnav__link">Om oss</a>
-          </li>
-          <li class="topnav__item">
-            <a href="#" class="topnav__link">Kontakt</a>
-          </li>
-          <li class="topnav__item">
-            <a href="#" class="topnav__link">Skapa Konto</a>
-          </li>
-        </ul>
+
+          <button class="topnav__login-button cta-button">Logga In</button>
+        </div>
       </div>
     </header>
 
     <!-- Main content -->
-    <main>
+    <main class="content-grid">
       <section class="hero">
-        <div class="tags">Upptäck. Upplev. Minns.</div>
-        <p class="hero__heading">
-          <!-- h1? hero text-->
-          Hitta lokala evenemang du kommer älska
-        </p>
-        <p class="hero__paragraph">
-          <!-- Hero blurb-->
-          Från konserter och marknader till workshops och familjeaktiviteter.
-          Upptäck vad som händer nära dig.
-        </p>
+        <div class="hero__text-content">
 
-        <div class="hero__CTA">
-          <button>Utforska evenemang</button>
-          <button>Se helgens tips</button>
+            <span class="tag">Upptäck. Upplev. Minns.</span>
+            <p class="hero__heading">
+                <!-- h1? hero text-->
+                Hitta lokala evenemang du kommer älska
+            </p>
+            <p class="hero__paragraph">
+                <!-- Hero blurb-->
+                Från konserter och marknader till workshops och familjeaktiviteter.
+                Upptäck vad som händer nära dig.
+            </p>
+            
+            <div class="hero__cta">
+                <button class="cta-button">Utforska evenemang</button>
+                <button class="alt-button">Se helgens tips</button>
+            </div>
         </div>
         <!--Bild grid-->
+        <div class="hero__image-grid">
+          <img
+            src="https://picsum.photos/200/300"
+            alt=""
+            class="hero__image"
+          /><img
+            src="https://picsum.photos/200/300"
+            alt=""
+            class="hero__image"
+          /><img
+            src="https://picsum.photos/200/300"
+            alt=""
+            class="hero__image"
+          />
+        </div>
       </section>
 
-      <section class="filter-bar">
+      <section class="filter-bar full-width">
         <p>Hitta rätt evenmang</p>
         <div class="filter-bar__filters">
           <form>
@@ -132,7 +170,7 @@
             </select>
             <label for="date">Datum</label>
             <input type="date" id="date" />
-            <button>Sök evenemang</button>
+            <button class="alt-button">Sök evenemang</button>
           </form>
         </div>
       </section>
@@ -272,7 +310,7 @@
         </div>
       </section>
 
-      <section class="sales-bar">
+      <section class="sales-bar full-width">
         <div>
           <img src="" alt="" class="sales-bar__image" />
           <p class="sales-bar__title">Gratis & Prisvärt</p>
@@ -299,7 +337,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="content-grid full-width">
       <div>
         <svg
           width="32"
