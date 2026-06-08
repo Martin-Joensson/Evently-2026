@@ -265,6 +265,7 @@ button {
   padding-inline: var(--spacing-5);
   padding-block: var(--spacing-2);
   border-radius: var(--rounded-1);
+  cursor: pointer;
 }
 
 .cta-button {
@@ -476,7 +477,51 @@ button {
 }
 
 .sales-bar {
-  background-color: green;
+  background-color: var(--emerald-100);
+  padding-block: var(--spacing-7);
+}
+
+.sales-bar__wrapper {
+  display: grid;
+  gap: var(--spacing-4);
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 4rem;
+
+  @media (width < 40rem) {
+    grid-template-columns: 200px;
+    margin: auto;
+  }
+}
+
+.sales-bar__item {
+  display: flex;
+  gap: 2rem;
+  justify-content: start;
+  align-items: center;
+
+  h2 {
+    font-weight: bold;
+    padding-block: var(--spacing-2);
+  }
+
+  p {
+    color: var(--gray-600);
+  }
+
+  @media (width < 60rem) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.sales-bar__image {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  padding: var(--spacing-4);
+  border-radius: 1000rem;
+  background-color: oklch(from var(--emerald-800) l c h / 0.1);
 }
 
 footer {

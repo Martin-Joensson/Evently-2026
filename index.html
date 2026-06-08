@@ -198,7 +198,7 @@
                 alt=""
                 class="grid-section__card-image"
               />
-           <svg
+              <svg
                 class="grid-section__heart"
                 width="20"
                 height="20"
@@ -270,7 +270,7 @@
                 alt=""
                 class="grid-section__card-image"
               />
-                  <svg
+              <svg
                 class="grid-section__heart"
                 width="20"
                 height="20"
@@ -307,7 +307,7 @@
                 alt=""
                 class="grid-section__card-image"
               />
-               <svg
+              <svg
                 class="grid-section__heart"
                 width="20"
                 height="20"
@@ -345,7 +345,7 @@
                 alt=""
                 class="grid-section__card-image"
               />
-                 <svg
+              <svg
                 class="grid-section__heart"
                 width="20"
                 height="20"
@@ -380,7 +380,7 @@
                 alt=""
                 class="grid-section__card-image"
               />
-                <svg
+              <svg
                 class="grid-section__heart"
                 width="20"
                 height="20"
@@ -412,27 +412,85 @@
       </section>
 
       <section class="sales-bar full-width">
-        <div>
-          <img src="" alt="" class="sales-bar__image" />
-          <p class="sales-bar__title">Gratis & Prisvärt</p>
-          <p class="sales-bar__text">
-            Hitta massor av evenemang som är gratis eller snälla mot plånboken.
-          </p>
-        </div>
-        <div>
-          <img src="" alt="" class="sales-bar__image" />
-          <p class="sales-bar__title">För alla åldrar</p>
-          <p class="sales-bar__text">
-            Aktiviteter för både stora och små - hitta något som passar hela
-            familjen.
-          </p>
-        </div>
-        <div>
-          <img src="" alt="" class="sales-bar__image" />
-          <p class="sales-bar__title">Nära dig</p>
-          <p class="sales-bar__text">
-            Upptäck evenemang i ditt område och stöd lokala arrangörer.
-          </p>
+        <div class="sales-bar__wrapper">
+          <div class="sales-bar__item">
+            <!-- ticket icon -->
+            <svg
+              class="m-1 text-emerald-800 sales-bar__image"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"
+              ></path>
+              <line x1="9" y1="5" x2="9" y2="19"></line>
+            </svg>
+            <div>
+              <h2 class="sales-bar__title">Gratis & Prisvärt</h2>
+              <p class="sales-bar__text">
+                Hitta massor av evenemang som är gratis eller snälla mot
+                plånboken.
+              </p>
+            </div>
+          </div>
+          <div class="sales-bar__item">
+            <!-- people icon -->
+            <svg
+              class="m-1 text-emerald-800 sales-bar__image"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <div>
+              <h2 class="sales-bar__title">För alla åldrar</h2>
+              <p class="sales-bar__text">
+                Aktiviteter för både stora och små - hitta något som passar hela
+                familjen.
+              </p>
+            </div>
+          </div>
+          <div class="sales-bar__item">
+            <!-- location icon -->
+            <svg
+              class="m-1 text-emerald-800 sales-bar__image"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <h2 class="sales-bar__title">Nära dig</h2>
+              <p class="sales-bar__text">
+                Upptäck evenemang i ditt område och stöd lokala arrangörer.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
