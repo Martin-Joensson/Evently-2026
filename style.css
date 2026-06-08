@@ -77,8 +77,10 @@ ul {
   list-style: none;
 }
 
+/* Add dark mode back in if there is time. */
+
 html {
-  color-scheme: dark light;
+  color-scheme: light;
 }
 
 /*** Global/base styles ***/
@@ -274,6 +276,21 @@ p {
 }
 
 .topnav__item {
+  transition: 0.15s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--purple-600);
+    transform: translateY(-0.25rem);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+}
+
+.topnav__search-icon {
+  padding: 1rem;
   transition: 0.15s ease-in-out;
 
   &:hover,
