@@ -70,6 +70,7 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 ul {
@@ -268,21 +269,55 @@ p {
   }
 }
 
+.active-link {
+  color: var(--purple-600);
+}
+
+.topnav__item {
+  transition: 0.15s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--purple-600);
+    transform: translateY(-0.25rem);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+}
+
 button {
+  --button-background: var(--purple-600);
+  --button-text: var(--white);
+  background-color: var(--button-background);
+  color: var(--button-text);
   padding-inline: var(--spacing-5);
   padding-block: var(--spacing-2);
   border-radius: var(--rounded-1);
   cursor: pointer;
+  transition: 0.1s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    background-color: oklch(from var(--button-background) l c h / 0.8);
+    color: oklch(from var(--button-text) l c h / 0.8);
+    transform: translateY(-0.25rem) scale(1.02);
+  }
+
+  &:active {
+    transform: translateY(-0.05rem) scale(1);
+  }
 }
 
 .cta-button {
-  background-color: var(--purple-600);
-  color: var(--white);
+  --button-background: var(--purple-600);
+  --button-text: var(--white);
   border: 2px solid var(--purple-600);
 }
 .alt-button {
-  background-color: var(--white);
-  color: var(--purple-600);
+  --button-background: var(--white);
+  --button-text: var(--purple-600);
   border-color: var(--purple-600);
 }
 
@@ -570,7 +605,7 @@ footer {
     }
   }
 
-    @media (width < 40rem) {
+  @media (width < 40rem) {
     grid-template-columns: 1fr;
 
     .footer__logo-wrapper {
