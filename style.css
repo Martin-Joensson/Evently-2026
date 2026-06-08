@@ -259,6 +259,7 @@ button {
 .cta-button {
   background-color: var(--purple-600);
   color: var(--white);
+  border: 2px solid var(--purple-600);;
 }
 .alt-button {
   background-color: var(--white);
@@ -288,8 +289,6 @@ button {
 
   .hero__heading {
     margin-block: var(--spacing-5);
-    font-family: var(--font-poppins);
-    line-height: 1;
     font-size: 5rem;
     font-weight: 600;
   }
@@ -325,7 +324,41 @@ button {
 }
 
 .filter-bar {
-  background-color: blue;
+  background-color: var(--indigo-100);
+  padding-block: 3rem;
+
+  h2 {
+    font-weight: 600;
+    padding-block-end: var(--spacing-4);
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-4);
+  }
+
+  .filter-bar__filter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    flex-grow: 1;
+  }
+
+  input,
+  select {
+    border-radius: var(--rounded-1);
+    padding-block: var(--spacing-2);
+    padding-inline: var(--spacing-2);
+    border: 2px solid var(--purple-200);
+  }
+
+  button {
+    flex-shrink: 0;
+    align-self: end;
+  }
 }
 
 .sales-bar {

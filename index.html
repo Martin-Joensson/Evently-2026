@@ -117,22 +117,21 @@
     <main class="content-grid">
       <section class="hero">
         <div class="hero__text-content">
+          <span class="tag">Upptäck. Upplev. Minns.</span>
+          <h1 class="hero__heading">
+            <!-- h1? hero text-->
+            Hitta lokala evenemang du kommer älska
+          </h1>
+          <p class="hero__paragraph">
+            <!-- Hero blurb-->
+            Från konserter och marknader till workshops och familjeaktiviteter.
+            Upptäck vad som händer nära dig.
+          </p>
 
-            <span class="tag">Upptäck. Upplev. Minns.</span>
-            <p class="hero__heading">
-                <!-- h1? hero text-->
-                Hitta lokala evenemang du kommer älska
-            </p>
-            <p class="hero__paragraph">
-                <!-- Hero blurb-->
-                Från konserter och marknader till workshops och familjeaktiviteter.
-                Upptäck vad som händer nära dig.
-            </p>
-            
-            <div class="hero__cta">
-                <button class="cta-button">Utforska evenemang</button>
-                <button class="alt-button">Se helgens tips</button>
-            </div>
+          <div class="hero__cta">
+            <button class="cta-button">Utforska evenemang</button>
+            <button class="alt-button">Se helgens tips</button>
+          </div>
         </div>
         <!--Bild grid-->
         <div class="hero__image-grid">
@@ -153,31 +152,37 @@
       </section>
 
       <section class="filter-bar full-width">
-        <p>Hitta rätt evenmang</p>
+        <h2>Hitta rätt evenmang</h2>
         <div class="filter-bar__filters">
           <form>
-            <label for="search">Sökord</label>
-            <input type="text" class="search" id="search" />
-            <label for="category">Kategori</label>
-            <select name="" id="category">
-              <option value="">Alla kategorier</option>
-              <option value="">Konsert</option>
-              <option value="">Marknad</option>
-              <option value="">Workshop</option>
-              <option value="">Familja</option>
-              <option value="">Sport</option>
-              <option value="">Hälsa</option>
-            </select>
-            <label for="date">Datum</label>
-            <input type="date" id="date" />
-            <button class="alt-button">Sök evenemang</button>
+            <div class="filter-bar__filter">
+              <label for="search">Sökord </label>
+              <input type="text" class="search" id="search" placeholder="Sök på t.ex. konsert, yoga..."/>
+            </div>
+            <div class="filter-bar__filter">
+              <label for="category">Kategori</label>
+              <select name="" id="category">
+                <option value="">Alla kategorier</option>
+                <option value="">Konsert</option>
+                <option value="">Marknad</option>
+                <option value="">Workshop</option>
+                <option value="">Familja</option>
+                <option value="">Sport</option>
+                <option value="">Hälsa</option>
+              </select>
+            </div>
+            <div class="filter-bar__filter">
+              <label for="date">Datum</label>
+              <input type="date" id="date" />
+            </div>
+            <button class="cta-button">Sök evenemang</button>
           </form>
         </div>
       </section>
 
       <section class="grid-section">
         <div class="grid-section__top">
-          <p>Populära evenemang</p>
+          <h2>Populära evenemang</h2>
           <a href="#">Se alla evenemang -></a>
         </div>
         <div class="grid-section__grid">
