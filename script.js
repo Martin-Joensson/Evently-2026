@@ -41,6 +41,13 @@ setupTopNav(media);
 btnNavOpen.addEventListener("click", openMobileMenu);
 btnNavClose.addEventListener("click", closeMobileMenu);
 
+// Event listener for the ESC key
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" || event.key === "Esc") {
+    closeMobileMenu();
+  }
+});
+
 media.addEventListener("change", function (e) {
   setupTopNav(e);
 });
