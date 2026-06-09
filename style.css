@@ -690,7 +690,7 @@ footer {
 }
 
 .footer__logo-wrapper {
-  width: 34ch;
+  max-width: 34ch;
 
   p {
     margin-block: var(--spacing-2);
