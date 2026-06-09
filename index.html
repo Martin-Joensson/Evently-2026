@@ -40,7 +40,7 @@
         <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
           <button
             id="btnNavClose"
-            class="topnav__close nav-button "
+            class="topnav__close nav-button interactive"
             aria-label="Close"
           >
             <svg
@@ -57,27 +57,33 @@
             <!-- <img src="" alt="" width="28" height="28" /> -->
           </button>
           <ul class="topnav__links">
-            <li class="topnav__item">
+            <li class="topnav__item interactive">
               <a href="#" class="topnav__link active-link">Hem</a>
             </li>
-            <li class="topnav__item">
+            <li class="topnav__item interactive">
               <a href="#" class="topnav__link">Evenemang</a>
             </li>
-            <li class="topnav__item">
+            <li class="topnav__item interactive">
               <a href="#" class="topnav__link">Kategorier</a>
             </li>
-            <li class="topnav__item">
+            <li class="topnav__item interactive">
               <a href="#" class="topnav__link">Om oss</a>
             </li>
-            <li class="topnav__item">
+            <li class="topnav__item interactive">
               <a href="#" class="topnav__link">Kontakt</a>
             </li>
           </ul>
-          <button class="topnav__login-burger alt-button">Logga In</button>
+          <button class="topnav__login-burger alt-button interactive">
+            Logga In
+          </button>
         </div>
         <div>
           <!-- spyglass icon -->
-          <a href="#" class="topnav__search-icon" aria-label="Sök på sidan">
+          <a
+            href="#"
+            class="topnav__search-icon interactive"
+            aria-label="Sök på sidan"
+          >
             <svg
               width="24"
               height="24"
@@ -115,7 +121,7 @@
               <line x1="4" y1="18" x2="20" y2="18"></line>
             </svg>
           </button>
-          <button class="topnav__login cta-button">Logga In</button>
+          <button class="topnav__login cta-button interactive">Logga In</button>
         </div>
       </div>
     </header>
@@ -136,8 +142,8 @@
           </p>
 
           <div class="hero__cta">
-            <button class="cta-button">Utforska evenemang</button>
-            <button class="alt-button">Se helgens tips</button>
+            <button class="cta-button interactive">Utforska evenemang</button>
+            <button class="alt-button interactive">Se helgens tips</button>
           </div>
         </div>
         <!--Bild grid-->
@@ -187,7 +193,7 @@
               <label for="date">Datum</label>
               <input type="date" id="date" />
             </div>
-            <button class="cta-button">Sök evenemang</button>
+            <button class="cta-button interactive">Sök evenemang</button>
           </form>
         </div>
       </section>
@@ -195,7 +201,7 @@
       <section class="grid-section">
         <div class="grid-section__top">
           <h2>Populära evenemang</h2>
-          <a href="#">Se alla evenemang -></a>
+          <a href="#" class="interactive">Se alla evenemang -></a>
         </div>
         <div class="grid-section__grid">
           <article class="grid-section__card">
@@ -224,7 +230,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="concert" class="grid-section__tag tag">Konsert</span
+                <span class="grid-section__tag tag tag--concert">Konsert</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">24 Maj</time></span
                 >
@@ -260,7 +266,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="market" class="grid-section__tag tag">Marknad</span
+                <span class="grid-section__tag tag tag--market">Marknad</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">25 Maj</time></span
                 >
@@ -296,8 +302,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="workshop" class="grid-section__tag tag"
-                  >Workshop</span
+                <span class="grid-section__tag tag tag--workshop">Workshop</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">27 Maj</time></span
                 >
@@ -333,7 +338,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="family" class="grid-section__tag tag">Familj</span
+                <span class="grid-section__tag tag tag--family">Familj</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">30 Maj</time></span
                 >
@@ -371,7 +376,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="sport" class="grid-section__tag tag">Sport</span
+                <span class="grid-section__tag tag tag--sport">Sport</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">1 juni</time></span
                 >
@@ -406,7 +411,7 @@
             </div>
             <div class="grid-section__text">
               <div class="grid-section__info-row">
-                <span type="concert" class="grid-section__tag tag">Konsert</span
+                <span class="grid-section__tag tag tag--concert">Konsert</span
                 ><span class="grid-section__date"
                   ><time datetime="2026-05-24">3 juni</time></span
                 >

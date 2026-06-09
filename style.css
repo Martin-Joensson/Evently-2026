@@ -18,7 +18,6 @@
   --gray-400: oklch(70.12% 0.019 252.3);
   --gray-600: oklch(44.51% 0.0304 257.65);
   --gray-900: oklch(18.23% 0.0298 274.65);
-  --gray-950: oklch(18.23% 0.0298 274.65);
   --white: oklch(100% 0 0);
   --transparent: oklch(100% 0 0 / 0);
 
@@ -35,7 +34,6 @@
   --blue-800: oklch(45% 0.2 260);
 
   /* Spacing */
-  --spacing: 0.25rem;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -48,6 +46,30 @@
   --rounded: 0.25rem;
   --rounded-1: 0.4rem;
   --rounded-2: 0.7rem;
+
+  /* Animations */
+  --lift-hover: translateY(-0.1rem);
+  --lift-active: translateY(0);
+
+  /* Semantic Layer */
+  --color-text: var(--gray-900);
+  --color-text-muted: var(--gray-600);
+
+  --color-primary: var(--purple-600);
+  --color-primary-soft: var(--purple-100);
+
+  --color-surface: var(--white);
+  --color-surface-muted: var(--gray-50);
+  --color-surface-footer: var(--gray-900);
+
+/* Breakpoints
+
+  40rem = mobile large
+  50rem = tablet
+  60rem = small desktop
+  65rem = large desktop
+
+*/
 }
 
 /* ==========================================
@@ -75,6 +97,11 @@ a {
   cursor: pointer;
 }
 
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
 ul {
   list-style: none;
 }
@@ -89,7 +116,7 @@ html {
 
 body {
   font-family: var(--font-inter);
-  color: var(--gray-900);
+  color: var(--color-text);
 }
 
 h1,
@@ -108,7 +135,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--gray-600);
+  color: var(--color-text-muted);
 }
 
 p {
@@ -121,13 +148,13 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-50);
+  background: var(--color-surface-muted);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-300);
+  background: var(--color-text-muted);
   border-radius: 5px;
-  border: 2px solid var(--gray-50);
+  border: 2px solid var(--color-text-muted);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -136,7 +163,7 @@ p {
 
 /* Kevin Powell's content-grid layout pattern */
 .content-grid {
-  --padding-inline: calc(var(--spacing) * 6);
+  --padding-inline: calc(var(--spacing-1) * 6);
   --content-max-width: 75rem;
   --breakout-max-width: 85rem;
 
@@ -187,6 +214,21 @@ p {
   border: 0;
 }
 
+/* Centralized functions */
+
+.interactive {
+  transition: 150ms ease-out;
+}
+
+.interactive:hover,
+.interactive:focus-visible {
+  transform: var(--lift-hover);
+}
+
+.interactive:active {
+  transform: var(--lift-active);
+}
+
 /* Navigation both mobile and desktop */
 
 .topnav {
@@ -204,8 +246,8 @@ p {
   }
 
   .topnav__login-burger {
-    background-color: var(--white);
-    color: var(--purple-600);
+    background-color: var(--color-surface);
+    color: var(--color-primary);
     order: 3;
     display: inline;
 
@@ -245,7 +287,7 @@ p {
 .footer__logo {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--gray-50);
+  color: var(--color-surface-muted);
 }
 
 .topnav__menu.is-open {
@@ -270,7 +312,7 @@ p {
     z-index: 20;
     inset: 0;
     padding: 1.5rem;
-    background-color: var(--purple-400);
+    background-color: var(--color-primary-soft);
     translate: 100vw 0;
     transition: translate 0.5s ease-in-out;
   }
@@ -293,21 +335,12 @@ p {
 }
 
 .active-link {
-  color: var(--purple-600);
+  color: var(--color-primary);
 }
 
-.topnav__item {
-  transition: 0.15s ease-in-out;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--purple-600);
-    transform: translateY(-0.25rem);
-  }
-
-  &:active {
-    transform: translateY(-0.1rem);
-  }
+.topnav__item:hover,
+.topnav__item:focus-visible {
+  color: var(--color-primary);
 }
 
 .topnav__search-icon {
@@ -316,7 +349,7 @@ p {
 
   &:hover,
   &:focus-visible {
-    color: var(--purple-600);
+    color: var(--color-primary);
     transform: translateY(-0.25rem);
   }
 
@@ -326,8 +359,8 @@ p {
 }
 
 button {
-  --button-background: var(--purple-600);
-  --button-text: var(--white);
+  --button-background: var(--color-primary);
+  --button-text: var(--color-surface);
   background-color: var(--button-background);
   color: var(--button-text);
   padding-inline: var(--spacing-5);
@@ -340,11 +373,6 @@ button {
   &:focus-visible {
     background-color: oklch(from var(--button-background) l c h / 0.8);
     color: oklch(from var(--button-text) l c h / 0.8);
-    transform: translateY(-0.25rem) scale(1.02);
-  }
-
-  &:active {
-    transform: translateY(-0.05rem) scale(1);
   }
 }
 
@@ -359,19 +387,19 @@ button {
 }
 
 .cta-button {
-  --button-background: var(--purple-600);
-  --button-text: var(--white);
-  border: 2px solid var(--purple-600);
+  --button-background: var(--color-primary);
+  --button-text: var(--color-surface);
+  border: 2px solid var(--color-primary);
 }
 .alt-button {
-  --button-background: var(--white);
-  --button-text: var(--purple-600);
-  border-color: var(--purple-600);
+  --button-background: var(--color-surface);
+  --button-text: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .tag {
-  --tag-color: var(--purple-100);
-  --tag-text-color: var(--purple-800);
+  --tag-color: var(--color-primary-soft);
+  --tag-text-color: var(--color-primary);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9rem;
@@ -380,32 +408,33 @@ button {
   background-color: var(--tag-color);
   color: var(--tag-text-color);
   border-radius: var(--rounded);
-
-  &[type="concert"] {
-    --tag-color: var(--purple-100);
-    --tag-text-color: var(--purple-800);
-  }
-
-  &[type="market"] {
-    --tag-color: var(--emerald-100);
-    --tag-text-color: var(--emerald-800);
-  }
-
-  &[type="workshop"] {
-    --tag-color: var(--orange-100);
-    --tag-text-color: var(--orange-800);
-  }
-
-  &[type="family"] {
-    --tag-color: var(--pink-100);
-    --tag-text-color: var(--pink-800);
-  }
-
-  &[type="sport"] {
-    --tag-color: var(--blue-100);
-    --tag-text-color: var(--blue-800);
-  }
 }
+
+.tag--concert {
+  --tag-color: var(--purple-100);
+  --tag-text-color: var(--purple-800);
+}
+
+.tag--market {
+  --tag-color: var(--emerald-100);
+  --tag-text-color: var(--emerald-800);
+}
+
+.tag--workshop {
+  --tag-color: var(--orange-100);
+  --tag-text-color: var(--orange-800);
+}
+
+.tag--family {
+  --tag-color: var(--pink-100);
+  --tag-text-color: var(--pink-800);
+}
+
+.tag--sport {
+  --tag-color: var(--blue-100);
+  --tag-text-color: var(--blue-800);
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -521,7 +550,7 @@ button {
 .grid-section__top {
   display: flex;
   justify-content: space-between;
-  align-items: centeR;
+  align-items: end;
   padding-block: var(--spacing-5);
 
   h2 {
@@ -562,16 +591,16 @@ button {
 
 .grid-section__card {
   position: relative;
-  /* border: 2px solid red; */
+
   border-radius: var(--rounded-1);
 
   box-shadow: 3px 3px 10px 8px var(--gray-100);
+  overflow: hidden;
 
   img:nth-child(1) {
     width: 100%;
     aspect-ratio: 2 / 1;
     object-fit: cover;
-    border-radius: var(--rounded-1) var(--rounded-1) 0 0;
   }
 
   .grid-section__text {
@@ -644,7 +673,7 @@ button {
 }
 
 footer {
-  background-color: var(--gray-950);
+  background-color: var(--color-surface-footer);
   color: var(--gray-300);
 
   padding-block: var(--spacing-7);
@@ -661,7 +690,7 @@ footer {
     gap: var(--spacing-2);
 
     h3 {
-      color: var(--gray-500);
+      color: var(--gray-300);
     }
 
     ul {
