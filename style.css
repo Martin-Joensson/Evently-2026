@@ -62,7 +62,7 @@
   --color-surface-muted: var(--gray-50);
   --color-surface-footer: var(--gray-900);
 
-/* Breakpoints
+  /* Breakpoints
 
   40rem = mobile large
   50rem = tablet
@@ -554,11 +554,13 @@ button {
   padding-block: var(--spacing-5);
 
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2.5vw + 0.5rem, 2rem);
     font-weight: 600;
   }
 
   a {
+    text-wrap: nowrap;
+    font-size: clamp(0.4rem, 1vw + 0.5rem, 1rem);
     color: var(--purple-600);
   }
 }
@@ -584,9 +586,14 @@ button {
 }
 
 .grid-section__grid {
+  --card-min-size: 300px;
   display: grid;
   gap: var(--spacing-4);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-min-size), 1fr));
+
+  @media (width < 40rem) {
+    --card-min-size: 240px;
+  }
 }
 
 .grid-section__card {
