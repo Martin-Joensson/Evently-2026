@@ -20,6 +20,7 @@
   --gray-900: oklch(18.23% 0.0298 274.65);
   --gray-950: oklch(18.23% 0.0298 274.65);
   --white: oklch(100% 0 0);
+  --transparent: oklch(100% 0 0 / 0);
 
   /* Utility Colors */
   --mint-50: oklch(97.5% 0.015 165);
@@ -194,19 +195,37 @@ p {
   align-items: center;
   padding-block: var(--spacing-4);
 
-  button {
-    border: none;
-    cursor: pointer;
+  .nav-button {
+    border: 0;
 
-    @media (width >= 40rem) {
+    @media (width >= 50rem) {
       display: none;
     }
   }
 
-  .topnav__login-button {
-    @media (width >= 40rem) {
+  .topnav__login-burger {
+    background-color: var(--white);
+    color: var(--purple-600);
+    order: 3;
+    display: inline;
+
+    margin: auto;
+
+    @media (width >= 50rem) {
+      display: none;
+    }
+  }
+
+  .topnav__login {
+    order: 3;
+    display: none;
+    @media (width >= 50rem) {
       display: inline;
     }
+  }
+
+  #btnNavOpen {
+    order: 3;
   }
 }
 
@@ -229,13 +248,11 @@ p {
   color: var(--gray-50);
 }
 
-.topnav__open[aria-expanded="true"] {
-  + .topnav__menu {
-    translate: 0;
+.topnav__menu.is-open {
+  translate: 0;
 
-    @media (prefers-reduced-motion) {
-      opacity: 1;
-    }
+  @media (prefers-reduced-motion) {
+    opacity: 1;
   }
 }
 
@@ -246,8 +263,11 @@ p {
 }
 
 .topnav__menu {
-  @media (width < 40rem) {
+  @media (width < 50rem) {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
     inset: 0;
     padding: 1.5rem;
     background-color: var(--purple-400);
@@ -255,7 +275,7 @@ p {
     transition: translate 0.5s ease-in-out;
   }
 
-  @media (width < 40rem) and (prefers-reduced-motion) {
+  @media (width < 50rem) and (prefers-reduced-motion) {
     translate: 0;
     opacity: 0;
     transition: opacity 500ms ease-in-out;
@@ -267,7 +287,7 @@ p {
   gap: 1rem;
   align-items: center;
 
-  @media (width < 40rem) {
+  @media (width < 50rem) {
     flex-direction: column;
   }
 }
@@ -325,6 +345,16 @@ button {
 
   &:active {
     transform: translateY(-0.05rem) scale(1);
+  }
+}
+
+.nav-button {
+  --button-background: var(--transparent);
+  padding: 0;
+
+  &:hover,
+  &:focus-visible {
+    background-color: oklch(from var(--button-background) l c h / 0.8);
   }
 }
 
@@ -509,7 +539,7 @@ button {
   top: 1rem;
   right: 1rem;
 
-  z-index: 100;
+  z-index: 10;
   width: 2rem;
   height: 2rem;
 
