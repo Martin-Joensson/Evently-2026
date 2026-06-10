@@ -3,16 +3,15 @@ const btnNavClose = document.querySelector("#btnNavClose");
 const media = window.matchMedia("(width < 50rem)");
 const topNavMenu = document.querySelector(".topnav__menu");
 const main = document.querySelector("main");
+const hearts = document.querySelectorAll(".grid-section__heart");
 
 function setupTopNav(e) {
   if (e.matches) {
     // is mobile
-    console.log("Is Mobile");
     topNavMenu.setAttribute("inert", "");
     topNavMenu.style.transition = "none";
   } else {
     // is tablet or larger
-    console.log("Is large");
     topNavMenu.removeAttribute("inert");
     topNavMenu.classList.remove("is-open");
   }
@@ -53,4 +52,11 @@ document.addEventListener("keydown", (event) => {
 
 media.addEventListener("change", function (e) {
   setupTopNav(e);
+});
+
+hearts.forEach((heart) => {
+  heart.addEventListener("click", () => {
+
+    heart.classList.toggle("heart-fill");
+  });
 });

@@ -615,6 +615,9 @@ button {
     cursor: pointer;
   }
 }
+.heart-fill {
+  fill: white;
+}
 
 .grid-section__grid {
   --card-min-size: 300px;
