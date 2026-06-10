@@ -17,6 +17,7 @@
   --gray-300: oklch(85.82% 0.0156 254.4);
   --gray-400: oklch(70.12% 0.019 252.3);
   --gray-600: oklch(44.51% 0.0304 257.65);
+  --gray-700: oklch(24.51% 0.0304 257.65);
   --gray-900: oklch(18.23% 0.0298 274.65);
   --white: oklch(100% 0 0);
   --transparent: oklch(100% 0 0 / 0);
@@ -52,15 +53,30 @@
   --lift-active: translateY(0);
 
   /* Semantic Layer */
-  --color-text: var(--gray-900);
-  --color-text-muted: var(--gray-600);
+  --color-text: light-dark(var(--gray-900), var(--white));
+  --color-text-muted: light-dark(var(--gray-600), var(--gray-50));
 
-  --color-primary: var(--purple-600);
-  --color-primary-soft: var(--purple-100);
+  --color-primary: light-dark(var(--purple-600), var(--purple-400));
+  --color-primary-soft: light-dark(var(--purple-100), var(--purple-100));
 
-  --color-surface: var(--white);
-  --color-surface-muted: var(--gray-50);
-  --color-surface-footer: var(--gray-900);
+  --color-surface: light-dark(var(--white), var(--gray-700));
+  --color-surface-muted: light-dark(var(--gray-50), var(--gray-400));
+  --color-surface-footer: light-dark(var(--gray-900), var(--gray-900));
+
+  --color-shadow: light-dark(var(--gray-100), var(--gray-900));
+
+  --color-filter: light-dark(var(--indigo-100), var(--gray-600));
+  --color-sales: light-dark(
+    var(--emerald-100),
+    oklch(from var(--emerald-800) 30% c h)
+  );
+  --color-sales-accent: light-dark(var(--emerald-800), var(--emerald-100));
+
+  /* Light Dark Colors */
+
+  --clr-ld-main-bg: light-dark(var(--clr-light-pink), var(--clr-black));
+  --clr-ld-text: light-dark(var(--clr-dark-text), var(--clr-light-text));
+  --clr-ld-title: light-dark(var(--clr-dark-purple), var(--clr-light-purple));
 
   /* Breakpoints
 
@@ -109,7 +125,7 @@ ul {
 /* Add dark mode back in if there is time. */
 
 html {
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
 /*** Global/base styles ***/
@@ -117,6 +133,7 @@ html {
 body {
   font-family: var(--font-inter);
   color: var(--color-text);
+  background-color: var(--color-surface);
 }
 
 h1,
@@ -140,6 +157,24 @@ h6 {
 
 p {
   text-wrap: pretty;
+}
+
+button {
+  --button-background: var(--color-primary);
+  --button-text: var(--color-surface);
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding-inline: var(--spacing-5);
+  padding-block: var(--spacing-2);
+  border-radius: var(--rounded-1);
+  cursor: pointer;
+  transition: 0.1s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    background-color: oklch(from var(--button-background) l c h / 0.8);
+    color: oklch(from var(--button-text) l c h / 0.8);
+  }
 }
 
 /* Custom premium scrollbar */
@@ -372,24 +407,6 @@ p {
   }
 }
 
-button {
-  --button-background: var(--color-primary);
-  --button-text: var(--color-surface);
-  background-color: var(--button-background);
-  color: var(--button-text);
-  padding-inline: var(--spacing-5);
-  padding-block: var(--spacing-2);
-  border-radius: var(--rounded-1);
-  cursor: pointer;
-  transition: 0.1s ease-out;
-
-  &:hover,
-  &:focus-visible {
-    background-color: oklch(from var(--button-background) l c h / 0.8);
-    color: oklch(from var(--button-text) l c h / 0.8);
-  }
-}
-
 .nav-button {
   --button-background: var(--transparent);
   padding: 0;
@@ -412,8 +429,8 @@ button {
 }
 
 .tag {
-  --tag-color: var(--color-primary-soft);
-  --tag-text-color: var(--color-primary);
+  --tag-color: light-dark(var(--color-primary-soft), var(--color-primary));
+  --tag-text-color: light-dark(var(--color-primary), var(--color-primary-soft));
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9rem;
@@ -425,28 +442,28 @@ button {
 }
 
 .tag--concert {
-  --tag-color: var(--purple-100);
-  --tag-text-color: var(--purple-800);
+  --tag-color: light-dark(var(--purple-100), var(--purple-800));
+  --tag-text-color: light-dark(var(--purple-800), var(--purple-100));
 }
 
 .tag--market {
-  --tag-color: var(--emerald-100);
-  --tag-text-color: var(--emerald-800);
+  --tag-color: light-dark(var(--emerald-100), var(--emerald-800));
+  --tag-text-color: light-dark(var(--emerald-800), var(--emerald-100));
 }
 
 .tag--workshop {
-  --tag-color: var(--orange-100);
-  --tag-text-color: var(--orange-800);
+  --tag-color: light-dark(var(--orange-100), var(--orange-800));
+  --tag-text-color: light-dark(var(--orange-800), var(--orange-100));
 }
 
 .tag--family {
-  --tag-color: var(--pink-100);
-  --tag-text-color: var(--pink-800);
+  --tag-color: light-dark(var(--pink-100), var(--pink-800));
+  --tag-text-color: light-dark(var(--pink-800), var(--pink-100));
 }
 
 .tag--sport {
-  --tag-color: var(--blue-100);
-  --tag-text-color: var(--blue-800);
+  --tag-color: light-dark(var(--blue-100), var(--blue-800));
+  --tag-text-color: light-dark(var(--blue-800), var(--blue-100));
 }
 
 .hero {
@@ -520,7 +537,7 @@ button {
 }
 
 .filter-bar {
-  background-color: var(--indigo-100);
+  background-color: var(--color-filter);
   padding-block: 3rem;
 
   h2 {
@@ -615,7 +632,7 @@ button {
 
   border-radius: var(--rounded-1);
 
-  box-shadow: 3px 3px 10px 8px var(--gray-100);
+  box-shadow: 3px 3px 10px 8px var(--color-shadow);
   overflow: hidden;
 
   img:nth-child(1) {
@@ -644,7 +661,7 @@ button {
 }
 
 .sales-bar {
-  background-color: var(--emerald-100);
+  background-color: var(--color-sales);
   padding-block: var(--spacing-7);
 }
 
@@ -673,7 +690,7 @@ button {
   }
 
   p {
-    color: var(--gray-600);
+    color: var(--color-text-muted);
   }
 
   @media (width < 60rem) {
@@ -690,7 +707,7 @@ button {
   flex-shrink: 0;
   padding: var(--spacing-4);
   border-radius: 1000rem;
-  background-color: oklch(from var(--emerald-800) l c h / 0.1);
+  background-color: oklch(from var(--color-sales-accent) l c h / 0.1);
 }
 
 footer {
