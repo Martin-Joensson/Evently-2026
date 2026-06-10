@@ -57,7 +57,7 @@
   --color-text-muted: light-dark(var(--gray-600), var(--gray-50));
 
   --color-primary: light-dark(var(--purple-600), var(--purple-200));
-  --color-primary-soft: light-dark(var(--purple-100), var(--purple-600));
+  --color-primary-soft: light-dark(var(--purple-100), var(--purple-800));
 
   --color-surface: light-dark(var(--white), var(--gray-700));
   --color-surface-muted: light-dark(var(--gray-50), var(--gray-400));
@@ -68,15 +68,9 @@
   --color-filter: light-dark(var(--indigo-100), var(--gray-600));
   --color-sales: light-dark(
     var(--emerald-100),
-    oklch(from var(--emerald-800) 30% c h)
+    oklch(from var(--gray-900) 30% c h)
   );
-  --color-sales-accent: light-dark(var(--emerald-800), var(--emerald-100));
-
-  /* Light Dark Colors */
-
-  --clr-ld-main-bg: light-dark(var(--clr-light-pink), var(--clr-black));
-  --clr-ld-text: light-dark(var(--clr-dark-text), var(--clr-light-text));
-  --clr-ld-title: light-dark(var(--clr-dark-purple), var(--clr-light-purple));
+  --color-sales-accent: light-dark(var(--emerald-800), var(--gray-100));
 
   /* Breakpoints
 
