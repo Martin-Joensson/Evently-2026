@@ -343,8 +343,19 @@ p {
   color: var(--color-primary);
 }
 
+.topnav__right-cluster {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+
+  svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .topnav__search-icon {
-  padding: 1rem;
   transition: 0.15s ease-in-out;
 
   &:hover,
@@ -355,6 +366,9 @@ p {
 
   &:active {
     transform: translateY(-0.1rem);
+  }
+  svg {
+    margin-inline: var(--spacing-1);
   }
 }
 
