@@ -671,6 +671,13 @@ button {
   }
 }
 
+.grid-section__card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .sales-bar {
   background-color: var(--color-sales);
   padding-block: var(--spacing-7);
